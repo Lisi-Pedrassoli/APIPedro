@@ -1,0 +1,44 @@
+# AWS Lambda - Envio de E-mail via Amazon SES
+
+## Descrição
+Esta função AWS Lambda envia um e-mail simples utilizando o serviço Amazon SES (Simple Email Service).
+
+## Funcionalidade
+- Envia um e-mail para um destinatário definido com corpo em texto e HTML.
+- Utiliza o cliente boto3 para se comunicar com o SES.
+
+## Entrada
+- No exemplo atual, os dados do e-mail (remetente, destinatário, assunto, corpo) estão fixos no código.
+- Pode ser alterado para receber via evento JSON para maior flexibilidade.
+
+## Saída
+- Retorna um JSON com status HTTP e mensagem confirmando o envio ou erro.
+
+## Dependências Externas
+- Biblioteca `boto3` (disponível nativamente no ambiente AWS Lambda para Python).
+- Serviço Amazon SES configurado e com e-mails verificados para envio e recebimento.
+
+## Configuração Prévia
+- Configurar o Amazon SES na região escolhida.
+- Verificar e-mails de remetente e destinatário no SES (modo sandbox exige verificação).
+- Criar a função Lambda com permissão para acessar o SES (`AmazonSESFullAccess` ou política customizada).
+
+## Como Executar
+- Fazer deploy da função no AWS Lambda.
+- Testar manualmente com um evento vazio `{}` ou adaptado.
+- Monitorar logs via CloudWatch para verificar sucesso ou falhas.
+
+## Como Testar e Depurar
+- Use a console do Lambda para executar a função manualmente.
+- Veja os logs detalhados no CloudWatch.
+- Verifique permissões IAM e status do SES se erros ocorrerem.
+
+## Custos
+- O Amazon SES tem camada gratuita limitada.
+- Evite envio em massa para não gerar custos altos.
+
+## Link do repositório
+[Seu link do GitHub aqui]
+
+## Link da função Lambda
+[Seu link da Lambda aqui]
